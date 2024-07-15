@@ -1,0 +1,23 @@
+[package]
+name = "bitlight-rgb20-contract-testnet4"
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+
+[dependencies]
+amplify = "4.6.0"
+strict_encoding = "2.7.0-beta.4"
+bp-core = "0.11.0-beta.6"
+serde = "1.0"
+serde_json = "1.0"
+# TODO: To test testnet4 upstream and downstream, 
+# git dependencies were used temporarily during development
+rgb-std =  { git = "https://github.com/will-bitlight/rgb-std.git", rev = "78a4951", features = ["serde", "fs"]}
+rgb-interfaces = { git = "https://github.com/will-bitlight/rgb-interfaces.git", rev = "19526d5"}
+rgb-schemata = { git = "https://github.com/will-bitlight/rgb-schemata.git", rev = "652f88b"}
+[features]
+all = []
+
+[profile.release]
+debug = 0
+lto = "off"
